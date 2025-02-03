@@ -1,0 +1,32 @@
+/*  Scss  */
+
+    @import "mixins.scss";
+
+    $principal: #333333;
+    $lighter: lighten($principal, 20%);
+    $darker: darken($principal, 20%);
+    $texto: #333333;
+
+    $fontone: 'Roboto', sans-serif;
+    $light: 300;
+    $normal: 400;
+    $bold: 700;
+    $black: 900;
+
+
+/*  Fuentes  */
+
+    @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700,900');
+
+
+/*  Estilos globales  */
+
+    body                            					   	    { -webkit-font-smoothing: antialiased; color: $texto; font-family: $fontone; font-weight: $normal; background: #ffffff; padding: 0rem; }
+    a													   	    { color: $principal; @include transition(all .3s); }
+    a:hover												        { color: $darker; text-decoration: none; }
+    a:link												   	    { color: $principal; text-decoration: none; }
+    p                                                           { margin-bottom: 1.25rem; }
+ 
+    @include xxl {
+
+    }

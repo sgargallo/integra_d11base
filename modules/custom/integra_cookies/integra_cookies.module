@@ -1,0 +1,177 @@
+<?php
+
+use Drupal\Core\Render\Markup;
+
+//Devuelve la ruta del archivo por defecto de configuración a no ser que haya una versión específica
+function integra_cookies_archivo_config() {
+
+	if (file_exists(\Drupal::service('extension.list.module')->getPath('integra_cookies') . '/settings/integra_cookies.xml')) {
+
+		return \Drupal::service('extension.list.module')->getPath('integra_cookies') . '/settings/integra_cookies.xml';
+
+	} else {
+
+		return \Drupal::service('extension.list.module')->getPath('integra_cookies') . '/settings/integra_cookies.default.xml';
+	}
+}
+
+//Inyección del html de los cookies
+function integra_cookies_page_bottom(array &$page_bottom) {
+
+	$contenido_cookies = "";
+	$xml_cookies = simplexml_load_file(integra_cookies_archivo_config());
+
+	//El bloque de nivel 1 solo se inyecta en los casos en los que no son nodos excluidos, ej. Política de Cookies
+	$current_path = \Drupal::service('path.current')->getPath();
+	$listaExclusion = explode(",", $xml_cookies->configuracion->nodos_excluidos);
+
+	if (!in_array($current_path, $listaExclusion)) {
+
+		$contenido_cookies .= integra_cookies_generar_aviso_nivel_1();
+	}
+
+	//El bloque de nivel 2 se inyecta siempre, ya que incluso en nodos excluidos debe poder aparecer para modificar la decisión de usuario si así lo desea
+	$contenido_cookies .= integra_cookies_generar_aviso_nivel_2();
+
+	//Inserción del contenido generado solo en el tema: personalizado
+	if (\Drupal::service('theme.manager')->getActiveTheme()->getName() == 'personalizado') {
+
+		$page_bottom['integra_cookies'] = [
+			'#type' => 'markup',
+			'#markup' => Markup::create($contenido_cookies),
+		];
+	}
+}
+
+//Inyección de las variables
+function integra_cookies_page_attachments(array &$attachments) {
+
+	$contenido_cookies = "";
+	$xml_cookies = simplexml_load_file(integra_cookies_archivo_config());
+
+	//Incluimos las variables de entorno necesarias para la funcionalidad JS
+	$contenido_cookies .= "var caducidadConsentimiento = " . $xml_cookies->configuracion->caducidad_consentimiento . ";";
+	$contenido_cookies .= "var tiposCookiesActivos = '" . $xml_cookies->configuracion->tipos_cookies_activos . "';";
+	$contenido_cookies .= "var tiposCookiesObligatorios = '" . $xml_cookies->configuracion->tipos_cookies_obligatorios . "';";
+	$contenido_cookies .= "var tiposConsentimientoActivos = '" . $xml_cookies->configuracion->tipos_consentimientos_activos . "';";
+	$contenido_cookies .= "var tiposConsentimientoObligatorios = '" . $xml_cookies->configuracion->tipos_consentimientos_obligatorios . "';";
+
+	//Inserción del contenido generado solo en el tema: personalizado
+	if (\Drupal::service('theme.manager')->getActiveTheme()->getName() == 'personalizado') {
+		$attachments['#attached']['html_head'][] = array(
+			array(
+				'#tag' => 'script',
+				'#value' => \Drupal\Core\Render\Markup::create($contenido_cookies),
+			),
+			'gdpr_cookies',
+		);
+	}
+
+	$attachments['#attached']['library'][] = 'integra_cookies/jquery.cookie';
+	$attachments['#attached']['library'][] = 'integra_cookies/integra_cookies';
+}
+
+//Generación de los avisos de diferentes niveles
+function integra_cookies_generar_aviso_nivel_1() {
+
+	global $base_url, $base_path;
+
+	$language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+	$path_module = \Drupal::service('extension.list.module')->getPath('integra_cookies');
+	$base_path_templates = $path_module . '/templates';
+
+	$contenido = file_get_contents($base_path_templates . '/integra_cookies_capa_1.html');
+	$xml_cookies = simplexml_load_file(integra_cookies_archivo_config());
+
+	foreach ($xml_cookies->avisos->aviso as $aviso) {
+
+		if ($aviso['lenguaje'] == $language) {
+
+			//Traduccion de cadenas estándar de texto
+			$contenido = str_replace("[titulo]", $aviso->nivel_1->titulo, $contenido);
+			$contenido = str_replace("[texto]", $aviso->nivel_1->texto, $contenido);
+			$contenido = str_replace("[instrucciones]", $aviso->nivel_1->instrucciones, $contenido);
+			$contenido = str_replace("[boton_ok]", $aviso->nivel_1->boton_ok, $contenido);
+			$contenido = str_replace("[boton_nok]", $aviso->nivel_1->boton_nok, $contenido);
+			$contenido = str_replace("[boton_config]", $aviso->nivel_1->boton_config, $contenido);
+		}
+	}
+
+	return $contenido;
+}
+function integra_cookies_generar_aviso_nivel_2() {
+
+	global $base_url, $base_path;
+	$language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+	$path_module = \Drupal::service('extension.list.module')->getPath('integra_cookies');
+	$base_path_templates = $path_module . '/templates';
+
+	$contenido = file_get_contents($base_path_templates . '/integra_cookies_capa_2.html');
+	$xml_cookies = simplexml_load_file(integra_cookies_archivo_config());
+
+	foreach ($xml_cookies->avisos->aviso as $aviso) {
+
+		if ($aviso['lenguaje'] == $language) {
+
+			//Traduccion de cadenas estándar de texto
+			$contenido = str_replace("[titulo]", $aviso->nivel_2->titulo, $contenido);
+			$contenido = str_replace("[instrucciones_1]", $aviso->nivel_2->instrucciones_1, $contenido);
+			$contenido = str_replace("[instrucciones_2]", $aviso->nivel_2->instrucciones_2, $contenido);
+			$contenido = str_replace("[etiqueta_tipo]", $aviso->nivel_2->etiqueta_tipo, $contenido);
+			$contenido = str_replace("[etiqueta_descripcion]", $aviso->nivel_2->etiqueta_descripcion, $contenido);
+			$contenido = str_replace("[boton_ok]", $aviso->nivel_2->boton_ok, $contenido);
+
+			$collapse_cookies = "";
+			$tipos_cookies_activos = explode(",", $xml_cookies->configuracion->tipos_cookies_activos);
+			$tipos_cookies_obligatorios = explode(",", $xml_cookies->configuracion->tipos_cookies_obligatorios);
+
+			//Generación del collapse de modo dinámico con los tipos de cookie que se definan...
+			foreach ($aviso->nivel_2->tipos_cookies->tipo_cookie as $tipo_cookie) {
+
+				if (in_array($tipo_cookie["id"], $tipos_cookies_activos)) {
+
+					//Obtenemos el collapse por defecto
+					$contenido_collapse_tipo_cookie = file_get_contents($base_path_templates . '/integra_cookies_collapse_cookies.html');
+
+					//Definición del estado del toggle: por defecto es una cookie opcional y está desactivada
+					$toggle_cookie = '<input class="form-check-input" type="checkbox" id="cookies_[id]" tipos_consentimiento="[tipos_consentimiento]">';
+
+					if (in_array($tipo_cookie["id"], $tipos_cookies_obligatorios)) {
+
+						//Cookie obligatoria. No damos opción de no activarla...
+						$toggle_cookie = '<input class="form-check-input" type="checkbox" id="cookies_[id]" tipos_consentimiento="[tipos_consentimiento]" checked disabled>';
+
+					} else {
+
+						//Revisamos el valor actual. En primer caso determinamos el nombre de la cookie en el sistema
+						$nombre_cookie = "acepta_cookies_" . $tipo_cookie["id"];
+
+						//Revisamos el estado de la cookie en el sistema y solo en caso que exista lo marcamos como activada...
+						if (isset($_COOKIE[$nombre_cookie])) {
+							if ($_COOKIE[$nombre_cookie] == "1") {
+								$toggle_cookie = '<input class="form-check-input" type="checkbox" id="cookies_[id]" tipos_consentimiento="[tipos_consentimiento]" checked>';
+							}
+						}
+					}
+
+					//Actualizamos el toggle con el caso definido anteriormente
+					$contenido_collapse_tipo_cookie = str_replace("[toggle]", $toggle_cookie, $contenido_collapse_tipo_cookie);
+
+					//Parametrizamos los valores con los del tipo de cookie a tratar
+					$contenido_collapse_tipo_cookie = str_replace("[id]", $tipo_cookie["id"], $contenido_collapse_tipo_cookie);
+					$contenido_collapse_tipo_cookie = str_replace("[nombre]", $tipo_cookie->nombre, $contenido_collapse_tipo_cookie);
+					$contenido_collapse_tipo_cookie = str_replace("[texto]", $tipo_cookie->texto, $contenido_collapse_tipo_cookie);
+					$contenido_collapse_tipo_cookie = str_replace("[tipos_consentimiento]", $tipo_cookie["tipos_consentimiento"], $contenido_collapse_tipo_cookie);
+
+					//Agregamos al collapse de cookies el tipo de cookie tratado
+					$collapse_cookies .= $contenido_collapse_tipo_cookie;
+				}
+			}
+
+			//Agregamos el collapse completo al bloque de nivel 2
+			$contenido = str_replace("[collapse_cookies]", $collapse_cookies, $contenido);
+		}
+	}
+
+	return $contenido;
+}

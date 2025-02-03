@@ -1,0 +1,4 @@
+integra_cookies:
+    js:
+        js/integra_cookies.js: {}
+        js/jquery.cookie.js: {}

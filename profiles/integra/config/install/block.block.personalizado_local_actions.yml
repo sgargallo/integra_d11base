@@ -1,0 +1,16 @@
+status: true
+dependencies:
+  theme:
+    - personalizado
+id: personalizado_local_actions
+theme: personalizado
+region: header
+weight: -3
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Acciones principales de la administración'
+  provider: core
+  label_display: '0'
+visibility: {  }

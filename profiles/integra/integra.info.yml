@@ -1,0 +1,46 @@
+name: 'Integra: Proyecto base'
+type: profile
+description: 'Instala un sitio web básico con configuración l&iacute;mpia y plantilla personalizada.'
+core_version_requirement: ^10 || ^11
+version: VERSION
+install:
+  - node
+  - block
+  - breakpoint
+  - ckeditor5
+  - config
+  - contextual
+  - menu_link_content
+  - datetime
+  - block_content
+  - editor
+  - help
+  - image
+  - menu_ui
+  - options
+  - path
+  - page_cache
+  - dynamic_page_cache
+  - dblog
+  - toolbar
+  - field_ui
+  - file
+  - views
+  - views_ui
+  - automated_cron
+  - backup_migrate
+  - ctools
+  - gtm
+  - metatag
+  - metatag_open_graph
+  - metatag_views
+  - pathauto
+  - redirect
+  - scss_compiler
+  - token
+  - twig_tweak
+  - integra_cookies
+themes:
+  - claro
+  - bootstrap5
+  - personalizado

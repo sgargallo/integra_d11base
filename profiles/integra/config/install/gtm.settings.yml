@@ -1,0 +1,5 @@
+enable: 0
+admin-pages: 0
+admin-disable: 1
+google-tag: ''
+langcode: es

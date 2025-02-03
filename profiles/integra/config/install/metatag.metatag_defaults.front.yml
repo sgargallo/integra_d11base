@@ -1,0 +1,7 @@
+langcode: es
+status: true
+dependencies: {  }
+id: front
+label: 'Página de inicio'
+tags:
+  canonical_url: '[site:url]'

@@ -1,0 +1,6 @@
+name: 'Integra GDPR Cookie Law'
+type: module
+description: 'Sistema de avisos y parametrización para cumplir el reglamento GDPR'
+package: 'Integra'
+version: 1.0
+core_version_requirement: ^8.8 || ^9 || ^10 || ^11

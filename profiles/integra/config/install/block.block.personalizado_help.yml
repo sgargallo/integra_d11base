@@ -1,0 +1,18 @@
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - personalizado
+id: personalizado_help
+theme: personalizado
+region: help
+weight: -6
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Ayuda
+  provider: help
+  label_display: '0'
+visibility: {  }

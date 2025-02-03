@@ -1,0 +1,324 @@
+<!--
+  Archivo de configuración por defecto para el módulo de cookies. Si se desea parametrizar tan solo hay que duplicarlo como integra_cookies.xml en la misma carpeta para que el sistema utilice los valores de configuración, textos y tipos de cookies indicados.
+  -->
+<integra_cookies>
+	<configuracion>
+		<nodos_excluidos>/node/2,/node/3,/node/4</nodos_excluidos>
+		<!-- Nodos de política de privacidad, cookies, aviso legal, etc. -->
+		<caducidad_consentimiento>90</caducidad_consentimiento>
+		<!-- Valor en días -->
+		<tipos_cookies_activos>tecnicas,personalizacion,analisis,publicidad</tipos_cookies_activos>
+		<!-- Deben existir entre los tipos que se describen en el XML -->
+		<tipos_cookies_obligatorios>tecnicas</tipos_cookies_obligatorios>
+		<!-- Deben existir entre los tipos que se describen en el XML -->
+		<tipos_consentimientos_activos>ad_storage,ad_user_data,ad_personalization,analytics_storage,functionality_storage,personalization_storage,security_storage</tipos_consentimientos_activos>
+		<!-- Deben existir entre los tipos que se describen en el XML -->
+		<tipos_consentimientos_obligatorios>security_storage</tipos_consentimientos_obligatorios>
+		<!-- Deben existir entre los tipos que se describen en el XML -->
+	</configuracion>
+	<avisos>
+		<aviso lenguaje="es">
+			<nivel_1>
+				<titulo>Acerca de las cookies en este sitio</titulo>
+				<texto>
+					<![CDATA[<p>Este sitio, propiedad de [NOMBRE DEL EDITOR DEL SITIO WEB], utiliza cookies propias y de terceros que permiten mejorar la usabilidad de navegación y recopilar información.</p>]]>
+				</texto>
+				<instrucciones>
+					<![CDATA[<p>Haz click en "Aceptar cookies" para aceptar todas las cookies y acceder directamente al sitio o haz click en "Rechazar cookies" en el caso que desees aceptar únicamente las cookies esenciales para el funcionamiento básico del sitio web.</p><p>Para obtener más información consulta la página de <a href="/politica-de-cookies">política de cookies</a>]]>
+				</instrucciones>
+				<boton_ok>Aceptar y navegar</boton_ok>
+				<boton_nok>Rechazar</boton_nok>
+				<boton_config>Configurar cookies</boton_config>
+			</nivel_1>
+			<nivel_2>
+				<titulo>Ajustes de cookies</titulo>
+				<instrucciones_1>
+					<![CDATA[Por favor, selecciona los tipos de cookies que se utilizarán en la navegación del sitio web. Las cookies técnicas no pueden ser desactivadas.]]>
+				</instrucciones_1>
+				<etiqueta_tipo>Tipo</etiqueta_tipo>
+				<etiqueta_descripcion>Descripción</etiqueta_descripcion>
+				<tipos_cookies>
+					<tipo_cookie id="tecnicas" tipos_consentimiento="">
+						<nombre>Técnicas</nombre>
+						<texto>
+							<![CDATA[<p>Las cookies técnicas son estrictamente necesarias para que nuestra página web funcione y puedas navegar por la misma. Este tipo de cookies son las que, por ejemplo, nos permiten identificarte, darte acceso a determinadas partes restringidas de la página si fuese necesario, o recordar diferentes opciones o servicios ya seleccionados por ti, como tus preferencias de privacidad. Por ello, están activadas por defecto, no siendo necesaria tu autorización al respecto.</p><p>A través de la configuración de tu navegador, puedes bloquear o alertar de la presencia de este tipo de cookies, si bien dicho bloqueo afectará al correcto funcionamiento de las distintas funcionalidades de nuestra página web.</p>]]>
+						</texto>
+					</tipo_cookie>
+					<tipo_cookie id="personalizacion" tipos_consentimiento="functionality_storage,personalization_storage">
+						<nombre>Personalización</nombre>
+						<texto>
+							<![CDATA[<p>Las cookies de personalización nos permiten recordar tus preferencias, para personalizar a tu medida determinadas características y opciones generales de nuestra página web, cada vez que accedas a la misma (por ejemplo, el idioma en que se te presenta la información, las secciones marcadas como favoritas, tu tipo de navegador, etc).</p><p>Por tanto, este tipo de cookies no tienen una finalidad publicitaria, sino que activándolas mejorarás la funcionalidad de la página web (por ejemplo, adaptándose a tu tipo de navegador) y la personalización de la misma en base a tus preferencias (por ejemplo, presentando la información en el idioma que hayas escogido en anteriores ocasiones), lo cual contribuirá a la facilidad, usabilidad y comodidad de nuestra página durante tu navegación.</p><p>Puedes activar o desactivar estas cookies marcando la casilla correspondiente, estando desactivadas por defecto.</p>]]>
+						</texto>
+					</tipo_cookie>
+					<tipo_cookie id="analisis" tipos_consentimiento="analytics_storage">
+						<nombre>Análisis</nombre>
+						<texto>
+							<![CDATA[<p>Las cookies de análisis nos permiten estudiar la navegación de los usuarios de nuestra página web en general (por ejemplo, qué secciones de la página son las más visitadas, qué servicios se usan más y si funcionan correctamente, etc.).</p><p>A partir de la información estadística sobre la navegación en nuestra página web, podemos mejorar tanto el propio funcionamiento de la página como los distintos servicios que ofrece. Por tanto, estas cookies no tienen una finalidad publicitaria, sino que únicamente sirven para que nuestra página web funcione mejor, adaptándose a nuestros usuarios en general. Activándolas contribuirás a dicha mejora continua.</p><p>Puedes activar o desactivar estas cookies marcando la casilla correspondiente, estando desactivadas por defecto.</p>]]>
+						</texto>
+					</tipo_cookie>
+					<tipo_cookie id="publicidad" tipos_consentimiento="ad_storage,ad_user_data,ad_personalization">
+						<nombre>Publicidad</nombre>
+						<texto>
+							<![CDATA[<p>Las cookies de publicidad comportamental nos permiten obtener información basada en la observación de tus hábitos y comportamientos de navegación en la web, a fin de poder mostrarte contenidos publicitarios que se ajusten mejor a tus gustos e intereses personales.</p><p>Por tanto, activando este tipo de cookies, la publicidad que te mostremos en nuestra página web no será genérica, sino que estará orientada a tus búsquedas, gustos e intereses, ajustándose por tanto exclusivamente a ti.</p><p>Puedes activar o desactivar estas cookies marcando la casilla correspondiente, estando desactivadas por defecto.</p>]]>
+						</texto>
+					</tipo_cookie>
+				</tipos_cookies>
+				<instrucciones_2>
+					<![CDATA[Para obtener más información consulta la página de <a href="/politica-de-cookies">política de cookies</a>.]]>
+				</instrucciones_2>
+				<boton_ok>Guardar configuración</boton_ok>
+			</nivel_2>
+		</aviso>
+		<aviso lenguaje="fr">
+			<nivel_1>
+				<titulo>À PROPOS DES COOKIES SUR CE SITE</titulo>
+				<texto>
+					<![CDATA[<p>Ce site, propriété de [NOMBRE DEL EDITOR DEL SITIO WEB], utilise ses propres cookies et ceux de tiers pour améliorer votre expérience de navigation et collecter des informations. Cliquez sur « Accepter les cookies » pour accepter tous les cookies et accéder directement au site ou cliquez sur « Rejeter les cookies » si vous souhaitez n'accepter que les cookies indispensables au fonctionnement de base du site Internet.</p>]]>
+				</texto>
+				<instrucciones>
+					<![CDATA[<p>Pour plus d'informations, consultez la page <a href="/cookies">politique des cookies</a>.</p>]]>
+				</instrucciones>
+				<boton_ok>Accepter et continuer</boton_ok>
+				<boton_nok>Refuser</boton_nok>
+				<boton_config>Configurer cookies</boton_config>
+			</nivel_1>
+			<nivel_2>
+				<titulo>Paramétrer les cookies</titulo>
+				<instrucciones_1>
+					<![CDATA[<p>Veuillez sélectionner les types de cookies à utiliser lors de la navigation sur le site web. Les cookies techniques ne peuvent pas être désactivés.</p>]]>
+				</instrucciones_1>
+				<tipos_cookies>
+					<tipo_cookie id="tecnicas" tipos_consentimiento="">
+						<nombre>COOKIES TECHNIQUES (OBLIGATOIRES)</nombre>
+						<texto>
+							<![CDATA[<p>Les cookies techniques sont strictement nécessaires pour que notre site web fonctionne et que vous puissiez y naviguer. Ce type de cookie nous permet par exemple de vous identifier, de vous donner accès à certaines zones de navigation restreintes si nécessaire, ou de mémoriser différentes options ou services que vous auriez déjà sélectionnés, comme les préférences de confidentialité.  C’est pourquoi ces cookies sont activés par défaut, sans besoin de votre autorisation.</p><p>En configurant votre navigateur, vous pouvez bloquer ou recevoir une alerte en présence de ce type de cookies, même si les bloquer altèrerait le bon fonctionnement des différentes fonctionnalités de notre site internet. </p>]]>
+						</texto>
+					</tipo_cookie>
+					<tipo_cookie id="personalizacion" tipos_consentimiento="functionality_storage,personalization_storage">
+						<nombre>COOKIES DE PERSONNALISATION</nombre>
+						<texto>
+							<![CDATA[<p>En configurant votre navigateur, vous pouvez bloquer ou recevoir une alerte en présence de ce type de cookies, même si les bloquer altèrerait le bon fonctionnement des différentes fonctionnalités de notre site internet.</p><p>Ainsi, ce type de cookies n’est pas à but publicitaire mais en les activant ils vous permettront d’améliorer la fonctionnalité de la page web (par exemple en s’adaptant à votre type de navigateur) et de la personnaliser selon vos préférence (par exemple, en affichant les rubriques dans la langue que vous auriez sélectionnée antérieurement). Cela rendra votre navigation plus facile et plus confortable.</p><p>Vous pouvez activer ou désactiver ces cookies en cochant la case correspondante. Par défaut, ils sont désactivés. </p>]]>
+						</texto>
+					</tipo_cookie>
+					<tipo_cookie id="analisis" tipos_consentimiento="analytics_storage">
+						<nombre>COOKIES D’ANALYSE</nombre>
+						<texto>
+							<![CDATA[<p>En général, les cookies d’analyse nous permettent d’étudier la navigation des usagers de notre page web (par exemple, les sections les plus visitées, les services les plus utilisés et leur bon fonctionnement etc.).</p><p>Grâce aux statistiques de navigation sur notre page web, nous pouvons améliorer tant le fonctionnement-même de la page que les divers services qu’elle propose. C’est pourquoi ces cookies n’ont pas de fins publicitaires mais servent uniquement à ce que notre site internet fonctionne mieux et s’adapte à tous les internautes en général. En les activant, vous contribuerez à cette amélioration continue. </p>]]>
+						</texto>
+					</tipo_cookie>
+					<tipo_cookie id="publicidad" tipos_consentimiento="ad_storage,ad_user_data,ad_personalization">
+						<nombre>Publicité</nombre>
+						<texto>
+							<![CDATA[<p>Les cookies de publicité comportementale nous permettent d'obtenir des informations basées sur l'observation de vos habitudes et comportements de navigation sur le Web, afin de pouvoir vous montrer un contenu publicitaire qui correspond mieux à vos intérêts personnels. Par conséquent, en activant ce type de cookies, la publicité que nous vous montrerons sur notre site Web ne sera pas générique, mais sera orientée vers vos recherches, s'adaptant exclusivement à vous goûts et intérêts.Vous pouvez activer ou désactiver ces cookies en cochant la case correspondante, étant désactivée par défaut.</p>]]>
+						</texto>
+					</tipo_cookie>
+				</tipos_cookies>
+				<instrucciones_2>
+					<![CDATA[<p>Pour obtenir de plus amples informations consultez la page <a href="/cookies">politique des cookies</a>.</p>]]>
+				</instrucciones_2>
+				<boton_ok>Enregistrer la configuration</boton_ok>
+			</nivel_2>
+		</aviso>
+		<aviso lenguaje="pt-pt">
+			<nivel_1>
+				<titulo>SOBRE COOKIES NESTE WEBSITE</titulo>
+				<texto>
+					<![CDATA[<p>Este sítio, propriedade da [NOMBRE DEL EDITOR DEL SITIO WEB], utiliza cookies próprios e de terceiros para melhorar a usabilidade da navegação e recolher informações. Clique em "Aceitar cookies" para aceitar todos os cookies e aceder diretamente ao sítio ou clique em "Rejeitar cookies" se pretender aceitar apenas os cookies indispensáveis ao funcionamento básico do sítio. </p>]]>
+				</texto>
+				<instrucciones>
+					<![CDATA[<p>Para mais informações, consulte a página de <a href="/cookies">política de cookies</a></p>]]>
+				</instrucciones>
+				<boton_ok>Aceitar e navegar</boton_ok>
+				<boton_nok>Recusar</boton_nok>
+				<boton_config>Configurar cookies</boton_config>
+			</nivel_1>
+			<nivel_2>
+				<titulo>Configurações de cookies</titulo>
+				<instrucciones_1>
+					<![CDATA[<p>Por favor, selecione os tipos de cookies que serem utilizados ao navegar no sítio web. Os cookies obrigatórios não podem ser desativados.</p>]]>
+				</instrucciones_1>
+				<tipos_cookies>
+					<tipo_cookie id="tecnicas" tipos_consentimiento="">
+						<nombre>COOKIES TÉCNICOS (OBRIGATÓRIOS)</nombre>
+						<texto>
+							<![CDATA[<p>Os cookies técnicos são estritamente necessários para que a nossa website funcione e para que possa navegar na mesma. Este tipo de cookies são aqueles que, por exemplo, nos permitem identificá-lo, dar-lhe acesso a certas partes restritas da página, se necessário, ou lembrar diferentes opções ou serviços já selecionados por si, tais como as suas preferências de privacidade. Por este motivo, estão ativados por defeito, não sendo necessária  a sua autorização. </p><p>Através das configurações do seu navegador, pode bloquear ou alertá-lo para a presença deste tipo de cookies, este bloqueio afetará o correto funcionamento das diferentes funcionalidades do nosso website.</p>]]>
+						</texto>
+					</tipo_cookie>
+					<tipo_cookie id="personalizacion" tipos_consentimiento="functionality_storage,personalization_storage">
+						<nombre>COOKIES DE PERSONALIZAÇÃO</nombre>
+						<texto>
+							<![CDATA[<p>Os cookies de personalização permitem-nos recordar as suas preferências a fim de personalizar à sua medida certas características e opções gerais do nosso website cada vez que acede ao mesmo (por exemplo, a língua em que a informação lhe é apresentada, as secções marcadas como favoritas, o seu tipo de navegador, etc.).</p><p>Por conseguinte, estes tipos de cookies não têm uma finalidade publicitária, senão que os ativando irá melhorar a funcionalidade do website (por exemplo, adaptando-se ao seu tipo de navegador) e personalização baseado em suas preferências (por exemplo, apresentando as informações na língua que escolheu em ocasiões anteriores), o que contribuirá para a facilidade, usabilidade e conforto do nosso website durante a sua navegação.</p>]]>
+						</texto>
+					</tipo_cookie>
+					<tipo_cookie id="analisis" tipos_consentimiento="analytics_storage">
+						<nombre>COOKIES DE ANÁLISE</nombre>
+						<texto>
+							<![CDATA[<p>Os cookies de análise permitem-nos estudar a navegação dos usuários navegam no nosso website em geral (por exemplo, que secções do website são as mais visitadas, que serviços são mais utilizados e se funcionam corretamente, etc.).</p><p>A partir da informação estatística sobre a navegação no nosso website, podemos melhorar tanto o próprio funcionamento do website como os diferentes serviços que oferece. Portanto, estes cookies não têm uma finalidade publicitária, mas apenas servem para fazer que o nosso website funcionar melhor, adaptando-o aos nossos usuários em geral. Ao ativá-los, contribuirá para esta melhoria contínua.</p><p>Pode ativar ou desativar estes cookies assinalando a caixa correspondente, sendo descativados por defeito.</p>]]>
+						</texto>
+					</tipo_cookie>
+					<tipo_cookie id="publicidad" tipos_consentimiento="ad_storage,ad_user_data,ad_personalization">
+						<nombre>Publicidade</nombre>
+						<texto>
+							<![CDATA[<p>Os cookies de publicidade comportamental permitem-nos obter informações com base na observação dos seus hábitos e comportamentos de navegação na Web, a fim de lhe podermos apresentar conteúdos publicitários que melhor se adaptem aos seus gostos e interesses pessoais.Portanto, ao ativar este tipo de cookies, a publicidade que lhe mostramos no nosso site não será genérica, mas sim orientada para as suas pesquisas, gostos e interesses, ajustando-se assim exclusivamente a si. Pode ativar ou desativar estes cookies marcando a caixa correspondente, estando desactivados por defeito.</p>]]>
+						</texto>
+					</tipo_cookie>
+				</tipos_cookies>
+				<instrucciones_2>
+					<![CDATA[<p>Para mais informações, ver a página da <a href="/cookies">política de cookies</a>.</p>]]>
+				</instrucciones_2>
+				<boton_ok>GUARDAR CONFIGURAÇÕES</boton_ok>
+			</nivel_2>
+		</aviso>
+		<aviso lenguaje="it">
+			<nivel_1>
+				<titulo>RIGUARDO AI COOKIES UTILIZZATI SUL NOSTRO SITO</titulo>
+				<texto>
+					<![CDATA[<p>Questo sito utilizza cookie tecnici proprietà di [NOMBRE DEL EDITOR DEL SITIO WEB], propri e di terze parti, per consentire la corretta navigazione e per raccogliere informazioni fai click su "accettare cookies" per accettare tutte le cookies ed accedere direttamente al sito internet o fai click su "rifiuta cookies" nel caso vuoi accettare solamente i cookies necessari per il corretto funzionamento del sito web.</p>]]>
+				</texto>
+				<instrucciones>
+					<![CDATA[<p>Per avere maggiori informazioni visita la pagina di <a href="/cookie">politica dei cookies</a></p>]]>
+				</instrucciones>
+				<boton_ok>Accettare e navigare</boton_ok>
+				<boton_nok>Rifiutare</boton_nok>
+				<boton_config>Configurare cookies</boton_config>
+			</nivel_1>
+			<nivel_2>
+				<titulo>Preferenza di cookies</titulo>
+				<instrucciones_1>
+					<![CDATA[<p>Per cortesia, selezioni i tipi di cookies che si utilizzeranno per la navigazione nel sito internet.</p><p>I cookies obbligatori non possono essere disattivati.</p>]]>
+				</instrucciones_1>
+				<tipos_cookies>
+					<tipo_cookie id="tecnicas" tipos_consentimiento="">
+						<nombre>Cookies tecnici (obbligatori)</nombre>
+						<texto>
+							<![CDATA[<p>I cookies tecnici sono strettamente necessari per consentire che il nostro sito internet funzioni correttamente e le consente di navigare senza inconvenienti. Questi tipi di cookies sono ad esempio quelli che ci permettono identificarla, darle accesso a determinate parti limitate del sito internet e se necessario per ricordarle le differenti opzioni e servizi già scelti da lei, come le preferenze sulla privacy. Per questo motivo sono attivati automaticamente senza dover richiedere autorizzazione.</p><p>Tramite le impostazioni del suo browser, potrà bloccare o avvertire della presenza di questi tipi di cookies, ma il blocco inciderà sulle prestazioni ed il corretto funzionamento delle varie opzioni del nostro sito internet.</p>]]>
+						</texto>
+					</tipo_cookie>
+					<tipo_cookie id="personalizacion" tipos_consentimiento="functionality_storage,personalization_storage">
+						<nombre>Cookies di personalizzazione</nombre>
+						<texto>
+							<![CDATA[<p>I cookies di personalizzazione ci permettono di ricordare le sue preferenze, per personalizzare a misura determinate caratteristiche ed opzioni generali del nostro sito internet, ogni volta che accederà (ad esempio, la lingua nella quale si presenta l’informazione, le scelte selezionate come preferite, il tuo browser, etc.) e la personalizzazione del sito internet in base alle sue preferenze (ad esempio evidenziando tutte le informazioni nella lingua che ha scelto precedentemente), questo contribuirà a rendere facile e comodità la navigazione nel nostro sito internet.</p><p>Può attivare o disattivare questi cookies segnando la casella corrispondente, essendo disattivi per difetto. </p>]]>
+						</texto>
+					</tipo_cookie>
+					<tipo_cookie id="analisis" tipos_consentimiento="analytics_storage">
+						<nombre>Cookies di analisi</nombre>
+						<texto>
+							<![CDATA[<p>I cookies di analisi ci permettono di verificare la navigazione degli utenti del nostro sito internet (ad esempio visualizzare quali sono le pagine più visitate, quali servizi sono i più utilizzati e se funzionano correttamente, etc.).</p><p>Possiamo migliorare il funzionamento e i servizi della nostra pagina a partire delle informazioni statische sulla navigazione. Dunque i cookies non hanno uno scopo pubblicitario ma invece servono per migliorare il funzionamento della pagina, adeguandosi ai nostri utenti. Accettando contribuirai ad un continuo miglioramento.</p><p>Puoi attivare e disattivare questi cookies segnando la casella corrispondente, essendo disattive per difetto. </p>]]>
+						</texto>
+					</tipo_cookie>
+					<tipo_cookie id="publicidad" tipos_consentimiento="ad_storage,ad_user_data,ad_personalization">
+						<nombre>Pubblicità</nombre>
+						<texto>
+							<![CDATA[<p>Le cookies di pubblicità comportamentali sono cookie che memorizzano informazioni sul comportamento dell'utente ottenute attraverso l'osservazione continua delle sue abitudini di navigazione, che permettono lo sviluppo di un profilo specifico per la visualizzazione di pubblicità basato su questo.Pertanto, attivando questo tipo di cookie, la pubblicità che vi mostriamo sul nostro sito web non sarà generica, ma sarà orientata alle vostre ricerche, ai vostri gusti e interessi, adattandosi quindi esclusivamente a voi. È possibile attivare o disattivare con la casella consentire i cookie,sono disattivate per difetto.</p>]]>
+						</texto>
+					</tipo_cookie>
+				</tipos_cookies>
+				<instrucciones_2>
+					<![CDATA[<p>Per ulteriori informazioni può consultare la pagina <a href="/cookie">politica dei cookies</a>.</p>]]>
+				</instrucciones_2>
+				<boton_ok>SALVA IMPOSTAZIONI</boton_ok>
+			</nivel_2>
+		</aviso>
+		<aviso lenguaje="de">
+			<nivel_1>
+				<titulo>Über Cookies auf dieser Seite</titulo>
+				<texto>
+					<![CDATA[<p>Diese Website, Eigentum von [NOMBRE DEL EDITOR DEL SITIO WEB], verwendet eigene Cookies und Cookies von Dritten, um die Benutzerfreundlichkeit der Navigation zu verbessern und Informationen zu sammeln.</p>]]>
+				</texto>
+				<instrucciones>
+					<![CDATA[<p>Klicken Sie bitte auf "Cookies akzeptieren", um alle Cookies zu akzeptieren und um direkt auf die Website zuzugreifen, oder klicken Sie bitte auf "Cookies ablehnen", wenn Sie nur die Cookies akzeptieren möchten, die für das grundlegende Funktionieren der Website erforderlich sind. Weitere Informationen finden Sie auf der Seite, bei den <a href="/verwendung-cookies">Cookie-Richtlinien</a> .</p>]]>
+				</instrucciones>
+				<boton_ok>Akzeptieren und weiter Surfen</boton_ok>
+				<boton_nok>Ablehnen</boton_nok>
+				<boton_config>Cookies setzen</boton_config>
+			</nivel_1>
+			<nivel_2>
+				<titulo>Bitte wählen Sie die Arten von Cookies aus, die beim Surfen auf der Website verwendet werden sollen. Obligatorische Cookies können nicht deaktiviert werden.</titulo>
+				<instrucciones_1>
+					<![CDATA[<p>Bitte wählen Sie die Arten von Cookies aus, die beim Surfen auf der Website verwendet werden sollen. Obligatorische Cookies können nicht deaktiviert werden.</p>]]>
+				</instrucciones_1>
+				<tipos_cookies>
+					<tipo_cookie id="tecnicas" tipos_consentimiento="">
+						<nombre>Technische Cookies (verpflichtend)</nombre>
+						<texto>
+							<![CDATA[<p>Technische Cookies sind unbedingt erforderlich, damit unsere Website funktioniert und Sie sie besuchen können. Bei dieser Art von Cookies handelt es sich um solche, die es uns beispielsweise ermöglichen, Sie zu identifizieren, Ihnen gegebenenfalls Zugang zu bestimmten eingeschränkten Teilen der Seite zu gewähren oder sich an verschiedene von Ihnen bereits ausgewählte Optionen oder Dienste zu erinnern, wie z. B. Ihre Datenschutzeinstellungen. Aus diesem Grund sind sie standardmäßig aktiviert, und Ihre Genehmigung ist nicht erforderlich.</p><p>Über die Einstellungen Ihres Browsers können Sie diese Art von Cookies blockieren oder Sie darauf aufmerksam machen, obwohl eine solche Blockierung das ordnungsgemäße Funktionieren der verschiedenen Funktionen unserer Website beeinträchtigen wird.</p>]]>
+						</texto>
+					</tipo_cookie>
+					<tipo_cookie id="personalizacion" tipos_consentimiento="functionality_storage,personalization_storage">
+						<nombre>Personalisierte Cookies</nombre>
+						<texto>
+							<![CDATA[<p>Personalisierte Cookies ermöglichen es uns, Ihre Präferenzen zu speichern, um bestimmte Funktionen und allgemeine Optionen unserer Website bei jedem Zugriff individuell anzupassen (z. B. die Sprache, in der Ihnen die Informationen präsentiert werden, die als Favoriten gekennzeichneten Bereiche, Ihr Browsertyp usw.).</p><p>Diese Art von Cookies hat also keinen Werbezweck, aber durch ihre Aktivierung verbessern Sie die Funktionalität der Website (z. B. durch Anpassung an Ihren Browsertyp) und ihre Anpassung an Ihre Präferenzen (z. B. durch Darstellung der Informationen in der Sprache, die Sie bei früheren Gelegenheiten gewählt haben), was zur Erleichterung, Benutzerfreundlichkeit und zum Komfort unserer Website während Ihres Besuchs beiträgt.</p><p>Sie können diese Cookies aktivieren oder deaktivieren, indem Sie das entsprechende Kästchen ankreuzen, das standardmäßig deaktiviert ist.</p>]]>
+						</texto>
+					</tipo_cookie>
+					<tipo_cookie id="analisis" tipos_consentimiento="analytics_storage">
+						<nombre>Análisis</nombre>
+						<nombre>Analyse Cookies</nombre>
+						<texto>
+							<![CDATA[<p>Mit Hilfe von Analyse-Cookies können wir untersuchen, wie die Nutzer unsere Website im Allgemeinen nutzen (z. B. welche Bereiche der Website am häufigsten besucht werden, welche Dienste am häufigsten genutzt werden und ob sie korrekt funktionieren usw.).</p><p>Anhand der statistischen Informationen über das Surfen auf unserer Website können wir sowohl die Funktionsweise der Website selbst als auch die verschiedenen angebotenen Dienste verbessern. Diese Cookies haben also keinen Werbezweck, sondern dienen lediglich dazu, unsere Website besser zu gestalten und sie an die Bedürfnisse unserer Nutzer im Allgemeinen anzupassen. Indem Sie sie aktivieren, tragen Sie zu dieser kontinuierlichen Verbesserung bei.</p><p>Sie können diese Cookies aktivieren oder deaktivieren, indem Sie das entsprechende Kästchen anklicken, da sie standardmäßig deaktiviert sind.</p>]]>
+						</texto>
+					</tipo_cookie>
+					<tipo_cookie id="publicidad" tipos_consentimiento="ad_storage,ad_user_data,ad_personalization">
+						<nombre>Werbung</nombre>
+						<texto>
+							<![CDATA[<p>Cookies für verhaltensbasierte Werbung ermöglichen es uns, Informationen zu erhalten, die auf der Beobachtung Ihrer Surfgewohnheiten und Ihres Verhaltens auf der Website beruhen, um Ihnen so Werbeinhalte zu zeigen, die besser auf Ihren persönlichen Geschmack und Ihre Interessen abgestimmt sind. Wenn Sie diese Art von Cookies aktivieren, wird die Werbung, die wir Ihnen auf unserer Website zeigen, nicht generisch sein, sondern sich an Ihren Suchanfragen, Ihrem Geschmack und Ihren Interessen orientieren und sich somit ausschließlich an Sie anpassen. Sie können diese Cookies aktivieren oder deaktivieren, indem Sie das entsprechende Kästchen anklicken, das standardmäßig deaktiviert ist.</p>]]>
+						</texto>
+					</tipo_cookie>
+				</tipos_cookies>
+				<instrucciones_2>
+					<![CDATA[<p>Weitere Informationen finden Sie auf der Seite mit den <a href="/verwendung-cookies">Cookie-Richtlinien</a>.</p>]]>
+				</instrucciones_2>
+				<boton_ok>KONFIGURATION SPEICHERN</boton_ok>
+			</nivel_2>
+		</aviso>
+		<aviso lenguaje="nl">
+			<nivel_1>
+				<titulo>Over Cookies op deze site</titulo>
+				<texto>
+					<![CDATA[<p>Deze site, eigendom van [NOMBRE DEL EDITOR DEL SITIO WEB], maakt gebruik van eigen cookies en cookies van derden om de gebruiksvriendelijkheid van de navigatie te verbeteren en informatie te verzamelen.</p>]]>
+				</texto>
+				<instrucciones>
+					<![CDATA[<p>Klik op "Cookies accepteren" om alle cookies te accepteren en direct toegang te krijgen tot de site of klik op "Cookies weigeren" als u alleen de cookies wilt accepteren die noodzakelijk zijn voor de basiswerking van de website. Zie voor meer informatie de pagina met het <a href="/cookies">cookiebeleid</a></p>]]>
+				</instrucciones>
+				<boton_ok>Accepteren en navigeren</boton_ok>
+				<boton_nok>Weigeren</boton_nok>
+				<boton_config>Cookies instellen</boton_config>
+			</nivel_1>
+			<nivel_2>
+				<titulo>Cookie-Instellingen</titulo>
+				<instrucciones_1>
+					<![CDATA[<p>Selecteer de soorten cookies die worden gebruikt bij het surfen op de website. Verplichte cookies kunnen niet worden uitgeschakeld.</p>]]>
+				</instrucciones_1>
+				<tipos_cookies>
+					<tipo_cookie id="tecnicas" tipos_consentimiento="">
+						<nombre>Strikt noodzakelijke Cookies (verplicht)</nombre>
+						<texto>
+							<![CDATA[<p>Technische cookies zijn strikt noodzakelijk voor de werking van onze website en om u in staat te stellen deze te bekijken. Dit zijn essentiële cookies waarmee wij u bijvoorbeeld kunnen identificeren, die u eventueel toegang geven tot bepaalde afgeschermde delen van de pagina, of die verschillende door u reeds geselecteerde opties of diensten onthouden, zoals uw privacyvoorkeuren. Daarom zijn ze standaard geactiveerd en is uw toestemming niet vereist.</p><p>Via de instellingen van uw browser kunt u de aanwezigheid van dit soort cookies blokkeren of waarschuwen, hoewel een dergelijke blokkering de goede werking van de verschillende functies van onze website beïnvloedt.</p>]]>
+						</texto>
+					</tipo_cookie>
+					<tipo_cookie id="personalizacion" tipos_consentimiento="functionality_storage,personalization_storage">
+						<nombre>Doelgroepgerichte Cookies</nombre>
+						<texto>
+							<![CDATA[<p>Met doelgroepgerichte of personalisatiecookies kunnen wij uw voorkeuren onthouden om bepaalde functies en algemene opties van onze website aan te passen telkens wanneer u deze bezoekt (bijvoorbeeld de taal waarin de informatie aan u wordt gepresenteerd, de onderdelen die als favoriet zijn gemarkeerd, uw browsertype, etc.)</p><p>Deze soorten cookies hebben dus geen reclamedoeleinden, maar door ze te activeren verbetert u de functionaliteit van de website (bijvoorbeeld door zich aan te passen aan uw browsertype) en past u de website aan uw voorkeuren aan (bijvoorbeeld door de informatie te presenteren in de taal die u bij eerdere gelegenheden hebt gekozen), wat bijdraagt aan het gemak, de bruikbaarheid en het comfort van onze website tijdens het surfen.</p><p>U kunt deze cookies in- of uitschakelen door het betreffende vakje, dat standaard is uitgeschakeld, aan te vinken.</p>]]>
+						</texto>
+					</tipo_cookie>
+					<tipo_cookie id="analisis" tipos_consentimiento="analytics_storage">
+						<nombre>Analytische Cookies</nombre>
+						<texto>
+							<![CDATA[<p>Met analytische of prestatiecookies kunnen wij bestuderen hoe gebruikers in het algemeen op onze website surfen (bijvoorbeeld welke delen van de website het meest worden bezocht, welke diensten het meest worden gebruikt en of ze goed werken, etc.)</p><p>Op basis van statistische informatie over het surfen op onze website kunnen wij zowel de werking van de website zelf als de verschillende diensten die er worden aangeboden verbeteren. Deze cookies hebben dus geen reclamedoeleinden, maar dienen alleen om onze website beter te laten functioneren en aan te passen aan onze gebruikers in het algemeen. Door ze te activeren draagt u bij aan deze voortdurende verbetering.</p><p>U kunt deze cookies activeren of deactiveren door het betreffende vakje aan te vinken, aangezien ze standaard gedeactiveerd zijn.</p>]]>
+						</texto>
+					</tipo_cookie>
+					<tipo_cookie id="publicidad" tipos_consentimiento="ad_storage,ad_user_data,ad_personalization">
+						<nombre>Reclame</nombre>
+						<texto>
+							<![CDATA[<p>Met cookies voor gedragsgericht adverteren kunnen we informatie verzamelen op basis van de observatie van uw surfgedrag en -gewoonten op internet, zodat we u reclame kunnen tonen die het beste aansluit bij uw persoonlijke smaak en interesses. Door dit type cookies te activeren, zal de reclame die we u op onze website tonen dus niet algemeen zijn, maar gericht zijn op uw zoekopdrachten, smaak en interesses, en zich dus uitsluitend aan u aanpassen. U kunt deze cookies in- of uitschakelen door het overeenkomstige vakje aan te vinken, dat standaard uitgeschakeld is.</p>]]>
+						</texto>
+					</tipo_cookie>
+				</tipos_cookies>
+				<instrucciones_2>
+					<![CDATA[<p>Zie voor meer informatie de pagina over het <a href="/cookies">cookiebeleid</a>.</p>]]>
+				</instrucciones_2>
+				<boton_ok>Instellingen opslaan</boton_ok>
+			</nivel_2>
+		</aviso>
+	</avisos>
+</integra_cookies>

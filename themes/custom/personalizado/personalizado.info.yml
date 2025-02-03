@@ -1,0 +1,27 @@
+type: theme
+base theme: bootstrap5
+core: 11.x
+core_version_requirement: ^8 || ^9 || ^10 || ^11
+
+name: 'Personalizado'
+description: 'Tema personalizado para el sitio web basado en Bootstrap'
+package: 'Integra'
+
+regions:
+  navigation: 'Navigation'
+  navigation_collapsible: 'Navigation (Collapsible)'
+  header: 'Header'
+  nav_main: 'Menu principal'
+  nav_additional: 'Menu principal - Extras'
+  highlighted: 'Highlighted'
+  help: 'Help'
+  premain: 'Pre main'
+  content: 'Main'
+  submain: 'Sub main'
+  footer: 'Footer'
+  page_top: 'Page top'
+  page_bottom: 'Page bottom'
+
+libraries:
+  - personalizado/global-styling
+  - personalizado/global-scripts

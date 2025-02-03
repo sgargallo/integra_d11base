@@ -1,0 +1,18 @@
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - personalizado
+id: personalizado_content
+theme: personalizado
+region: content
+weight: -6
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Contenido principal de la página'
+  provider: system
+  label_display: '0'
+visibility: {  }
