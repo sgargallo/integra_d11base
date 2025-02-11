@@ -24,6 +24,7 @@
        "drupal/core-vendor-hardening": "^11.1",
        "drupal/ctools": "^4.1",
        "drupal/gtm": "^1.9",
+       "drupal/gutenberg": "^3.0",
        "drupal/mail_login": "^4.0",
        "drupal/metatag": "^2.1",
        "drupal/pathauto": "^1.13",
